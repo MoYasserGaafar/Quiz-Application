@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+    Specifies the character encoding as UTF-8, allowing for displaying various languages and characters.
+    Controls how the page is displayed on different devices and ensures that the page adapts to various screen sizes and adjusts the initial zoom level. 
+    -->
+    <title>Quiz App</title>
+    <!--?================> Google Fonts >> Changa and Sans-Serif <================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--?================> Favicon <================-->
+    <link rel="icon" href="images/quiz.png" />
+    <!-- Links an icon to be displayed in the browser tab and bookmarks -->
+    <!--?================> Animate.CSS Library <================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--?================> Bootstrap >> CSS <================-->
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!--?================> CSS Main File <================-->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!--?================> Main Container <================-->
+    <main class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
+    <!--
+    <min-vh-100>: Ensures the main content area occupies at least 100% of the viewport height.
+    <d-flex>: Applies the flexbox utility class.
+    <flex-column>: Arranges elements in the flexbox in a column layout.
+    <justify-content-center>: Aligns the content vertically in the center of the main area.
+    <align-items-center>: Aligns the content horizontally in the center of the main area.    
+    -->
+        <!--?================> Heading <================-->
+        <div class="heading animate__animated animate__backInLeft"> 
+        <!-- Applies classes from <Animate.CSS> to animate the heading -->
+            <h1 class="mb-0">Quiz App</h1>
+        </div>
+
+        <!--?================> Container for Quiz Options <================-->
+        <div class="container">
+            <div class="row">
+                <form class="start-quiz col-lg-8 offset-lg-2 d-flex flex-column gap-3 animate__animated animate__fadeInBottomLeft" id="quizOptions"> 
+                <!-- Styles the form and sets its width to 8 columns with a 2-column offset on large screens -->
+                 <!-- 
+                <d-flex>, <flex-column gap-3>: Applies flexbox for vertical layout with gaps between elements.
+                <animate__animated>, <animate__fadeInBottomLeft>: Applies <Animate.CSS> animation for a sliding-in effect from the bottom left.
+                <id="quizOptions">: Assigns an ID for JavaScript reference.
+                 -->
+
+                    <!-- >>>>> 1st Form: Category of Questions <<<<< -->
+                    <div class="form-floating"> 
+                    <!-- Creates a floating label element -->
+                        <select class="form-select" id="categoryMenu" aria-label="category Select">
+                        <!-- Creates a dropdown select element for category selection -->
+
+                            <!-- Categories Options and its Values -->
+                            <!-- <option> elements>: Define the options for the category menu -->
+                            <option selected value="">Any Category</option>
+                            <option value="9">General Knowledge</option>
+                            <option value="27">Animals</option>
+                            <option value="19">Science: Mathematics</option>
+                            <option value="18">Science: Computers</option>
+                            <option value="22">Geography</option>
+                        </select>
+                        <label for="categoryMenu">Choose Category</label>
+                        <!-- Associates the label with the select element -->
+                    </div>
+
+                    <!-- >>>>> 2nd Form: Difficulty of Questions <<<<< -->
+                    <div class="form-floating"> 
+                        <select class="form-select" id="difficultyOptions" aria-label="difficulty Select">
+                            <option selected value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <label for="difficultyOptions">Choose Difficulty Level</label>
+                    </div>
+
+                    <!-- >>>>> 3rd Form: Number of Questions <<<<< -->
+                    <div class="form-floating"> 
+                        <input type="number" class="form-control" id="questionsNumber" placeholder="Number of Questions" />
+                        <label for="QuestionsNumber">Number of Questions</label>
+                    </div>
+
+                    <button type="button" class="btn btn-start btn-primary" id="startQuiz">
+                        Start
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="container">
+                <div class="row">
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--!========> JavaScript Main File <========-->
+    <script src="main.js"></script>
+</body>
+
+</html>
